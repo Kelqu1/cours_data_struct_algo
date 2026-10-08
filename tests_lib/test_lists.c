@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "lists.h"
+#include "../include/lists.h"
 
 void main(){
     dlist d = dlist_add(5,dlist_add(8,dlist_add(25,NULL)));

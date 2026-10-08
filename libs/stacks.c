@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "stacks.h"
+#include "../include/stacks.h"
 
 stack create_stack(int size_max){
     stack s;

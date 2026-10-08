@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "lists.h"
+#include "../include/lists.h"
 
 slist slist_add(float a,slist t){
     slist l=malloc(sizeof(struct cell_simple));

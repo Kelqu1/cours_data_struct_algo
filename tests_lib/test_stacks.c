@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "stacks.h"
+#include "../include/stacks.h"
 
 int main(){
     stack my_stack=create_stack(4);
