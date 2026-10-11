@@ -15,7 +15,7 @@ typedef struct cell_double {
 slist slist_add(float a,slist t);
 dlist dlist_add(float a,dlist t);
 
-void print_slist(slist l);
-void print_dlist(dlist l);
+void print_slist(const slist l);
+void print_dlist(const dlist l);
 
 #endif

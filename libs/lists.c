@@ -18,7 +18,7 @@ dlist dlist_add(float a,dlist t){
     return l;
 }
 
-void print_slist(slist l){
+void print_slist(const slist l){
     printf("(");
     slist ptr=l;
     while (ptr != NULL )
@@ -29,7 +29,7 @@ void print_slist(slist l){
     printf(" )\n");
 }
 
-void print_dlist(dlist l){
+void print_dlist(const dlist l){
     printf("(");
     dlist ptr=l;
     while (ptr != NULL )

@@ -16,9 +16,16 @@ int main(){
     printf("exepected value (4) \t:%i\n",peek(my_stack));
 
     my_stack=push(5,my_stack);
-
-    //5
-    //4
-    //19
+    //expected :---
+    //expected :|5|
+    //expected :|4|
+    //expected :|19|
+    //expected :---S
     print_stack(my_stack);
+
+
+    my_stack=push(28,my_stack);
+    my_stack=push(55,my_stack);
+    //expected : stack max size is 4, cannot push
+
 }
