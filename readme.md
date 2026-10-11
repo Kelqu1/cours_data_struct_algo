@@ -1,3 +1,19 @@
+this repo is school related.
+the goal of is to implement data structures and alogithms in C
+and optimise them (hopefully well)
+
+| data strutures        | status        | include           |
+|:---------------------:|:-------------:|:-----------------:|
+| Arrays                | native in C   |       /           |
+| Single linked lists   | done          | include/lists.h   |
+| Double linked lists   | done          | include/lists.h   |
+| Circular linked lists | not done      | not implemented   |
+| Stacks                | done          | include/stacks.h  |
+| Simple Queue          | in progress   | not implemented   |
+| Circular Queue        | not done      | not implemented   |
+| Priority Queue        | not done      | not implemented   |
+| Hash Tables           | not done      | not implemented   |
+
 command to test if the libs are working as intended 
 (from the root of the repo)
 
