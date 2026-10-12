@@ -11,7 +11,7 @@ and optimise them (hopefully well)
 | Stacks                | done          | include/stacks.h  |
 | Simple Queue          | done          | include/queue.h   |
 | Circular Queue        | not done      | not implemented   |
-| Priority Queue        | not done      | not implemented   |
+| Priority Queue        | in progress   | not implemented   |
 | Hash Tables           | not done      | not implemented   |
 
 testing commands for the libs :
