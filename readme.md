@@ -1,8 +1,8 @@
-this repo is school related.
+This repo is school related.
 the goal of is to implement data structures and alogithms in C
 and optimise them (hopefully well)
 
-| data strutures        | status        | include           |
+| data strutures        | status        | include Path      |
 |:---------------------:|:-------------:|:-----------------:|
 | Arrays                | native in C   |       /           |
 | Single linked lists   | done          | include/lists.h   |
@@ -14,8 +14,8 @@ and optimise them (hopefully well)
 | Priority Queue        | not done      | not implemented   |
 | Hash Tables           | not done      | not implemented   |
 
-command to test if the libs are working as intended 
-(from the root of the repo)
+testing commands for the libs :
+(from the root of the repository)
 
 --to test the list library :
 gcc ./tests_lib/test_lists.c ./libs/lists.c -o libs.a
