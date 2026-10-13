@@ -13,5 +13,4 @@ int main(){
     a=remove_queue(a);
     printf("top of the queue %i\n",look_top_queue(a));
     print_queue(a);
-    free(a.val);
 }

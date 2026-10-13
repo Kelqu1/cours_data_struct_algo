@@ -4,10 +4,8 @@
 
 #include "../include/queue.h"
 
-queue create_queue(int size_max){
+queue create_queue(){
     queue q;
-    q.size_max=size_max;
-    q.val=malloc(q.size_max * sizeof(int));
     q.head=0;
     q.tail=-1;
     return q;
@@ -20,7 +18,7 @@ bool is_queue_empty(const queue q){
 
 //true=full
 bool is_queue_full(const queue q){
-    return q.tail +1 >= q.size_max;
+    return q.tail +1 >= SIZE_MAX;
 }
 
 queue add_queue(int a, queue q){

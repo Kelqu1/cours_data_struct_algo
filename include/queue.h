@@ -1,14 +1,19 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE_MAX 100
+
 typedef struct cell {
-    int *val;
+    int val[SIZE_MAX];
     int head;
     int tail;
-    int size_max;
 } queue;
 
-queue create_queue(int size_max);
+queue create_queue();
 
 bool is_queue_empty(const queue q);
 bool is_queue_full(const queue q);
