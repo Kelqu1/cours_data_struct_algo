@@ -27,4 +27,4 @@ gcc ./tests_lib/test_stacks.c ./libs/stacks.c -o stacks.a
 gcc ./libs/queue.c ./tests_lib/test_queue.c -o queue.a
 
 --to test the hash table libary :
-gcc ./libs/hash_tables.c ./tests_lib/test_hash_tables.c -o queue.a
+gcc ./libs/hash_tables.c ./tests_lib/test_hash_tables.c -o hash_tables.a

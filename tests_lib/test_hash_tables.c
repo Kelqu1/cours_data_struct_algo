@@ -5,21 +5,24 @@
 #include "../include/hash_tables.h"
 
 int main(){
-    ht_set("foo", 42);
-    ht_set("bar", 7);
-    ht_set("foo", 100);
+    hash_table htable =init_hash_tables();
+    ht_set("foo", 42,htable);
+    ht_set("bar", 7,htable);
+    ht_set("foo", 100,htable);
+
+    print_hash_tables(htable);
 
     int *v;
 
-    v = ht_get("foo");
+    v = ht_get("foo",htable);
     printf("foo = %d\n", v ? *v : -1);
 
-    v = ht_get("bar");
+    v = ht_get("bar",htable);
     printf("bar = %d\n", v ? *v : -1);
 
-    v = ht_get("baz");
+    v = ht_get("baz",htable);
     printf("baz = %d\n", v ? *v : -1);   // -1 = absent
 
-    ht_free();
+    ht_free(htable);
     return 0;
 }

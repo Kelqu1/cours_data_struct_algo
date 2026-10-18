@@ -4,9 +4,12 @@
 
 #include "../include/hash_tables.h"
 
-hash_table table[TABLE_SIZE];   // initialisé à 0 (key = NULL)
+hash_table init_hash_tables(){
+    hash_table table=calloc(TABLE_SIZE,sizeof(struct cell));
+    return table;
+}
 
-unsigned long hash(const char *s) {   // djb2
+unsigned long hash(const char *s) {
     unsigned long h = 5381;
     while (*s) {
         h = h * 33 + (unsigned char)*s;
@@ -15,39 +18,50 @@ unsigned long hash(const char *s) {   // djb2
     return h;
 }
 
-// Renvoie l'indice de la clé si elle existe, sinon l'indice de la première
-// case vide où elle devrait être insérée. Renvoie -1 si la table est pleine.
-int find_slot(const char *key) {
-    int idx = hash(key) % TABLE_SIZE;   // < 1024, tient dans un int
+// return -1 if the element don't exist
+int find_slot(const char *key,hash_table table) {
+    unsigned long idx = hash(key) % TABLE_SIZE; 
 
     for (int i = 0; i < TABLE_SIZE; i++) {
-        if (table[idx].key == NULL)           return idx;   // case vide
-        if (strcmp(table[idx].key, key) == 0) return idx;   // clé trouvée
+        if (table[idx].key == NULL)           return idx;   // empty 
+        if (strcmp(table[idx].key, key) == 0) return idx;   // not empty
         idx = (idx + 1) % TABLE_SIZE;
     }
     return -1;
 }
 
-int ht_set(const char *key, int value) {
-    int idx = find_slot(key);
-    if (idx < 0) return 0;                    // table pleine
+int ht_set(const char *key, int value,hash_table table) {
+    int idx = find_slot(key,table);
+    if (idx < 0) return 0;
 
     if (table[idx].key == NULL)
-        table[idx].key = strdup(key);         // nouvelle clé
+        table[idx].key = strdup(key); 
     table[idx].value = value;
     return 1;
 }
 
-int *ht_get(const char *key) {
-    int idx = find_slot(key);
+int *ht_get(const char *key,hash_table table) {
+    int idx = find_slot(key,table);
     if (idx < 0 || table[idx].key == NULL)
-        return NULL;                          // absente
+        return NULL;
     return &table[idx].value;
 }
 
-void ht_free(void) {
+void print_hash_tables(const hash_table table){
+    printf("hash table:\n");
+    printf("|keys\t|value\t|\n");
+    for (int idx = 0; idx < TABLE_SIZE; idx++) {
+        if (table[idx].key!=NULL){
+            printf("|%i\t|%i\t|\n",idx,table[idx].value);
+        }
+    }
+    printf("____\t|____\t|\n");
+}
+
+void ht_free(hash_table table) {
     for (int i = 0; i < TABLE_SIZE; i++) {
         free(table[i].key);
         table[i].key = NULL;
     }
+    return;
 }
